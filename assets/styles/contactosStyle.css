@@ -53,7 +53,7 @@ body{
   background-position: center;
 }
 .btnPerfil:hover{
-    background-color: aquamarine;
+    background-color: olivedrab;
 }
 
 /* ..................................................................................... */
@@ -90,4 +90,11 @@ body{
     margin: 3px;
 
     margin-right: 5px;
+
+    border-radius: 15px;
+    border: 1px solid white;
+    background-color: black;
+}
+.btnContacto:hover{
+    background-color: olivedrab;
 }
