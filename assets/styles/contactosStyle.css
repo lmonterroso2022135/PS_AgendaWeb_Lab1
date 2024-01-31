@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+    color: white;
+}
+
+body{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 37%, rgba(9,17,124,1) 39%, rgba(0,255,225,1) 100%);
+    background: cover;
+}
+.encabezado{
+    width: 100%;
+    height: 75px;
+    align-items: center;
+    display: grid;
+    grid-template-rows: 70px 1fr;
+    color: #fff;
+    background-color: black;
+
+    top: 0;
+    position: sticky;
+    z-index: 1; 
+}
+.nav{
+    width: 90%;
+    margin: auto;
+    --padding-container: 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.nav_perfil{
+    width: auto;
+
+    margin-left: auto;
+}
+.btnPerfil{
+  width: 65px;
+  height: 65px;
+  margin-top: 9px;
+
+  border: none;
+  background-color: white;
+  border-radius: 50%;
+  background-image: url('../../resource/images/usuarioImagen.png');
+  background-size: cover; /* Puedes ajustar esto según tus necesidades */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.btnPerfil:hover{
+    background-color: aquamarine;
+}
+
+/* ..................................................................................... */
+.contenedor{
+    background-color: black;
+    margin: 30px;
+    padding: 30px;
+
+    border-radius: 25px;
+    border: 1px solid white;
+}
+.tablaPc{    
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tablaPc tr th{
+    border-bottom: 1px solid white ;
+    padding: 5px;
+}
+.tablaPc tr .th_btn{
+    border-bottom: none;
+    width: 65px;
+}
+.tablaPc tr dt{
+    padding: 5px;
+}
+.tablaPc tr:nth-of-type(even){
+    background-color: rgb(20, 20, 20);
+}
+.btnContacto{
+    width: 65px;
+    height: 30px;
+    margin: 3px;
+
+    margin-right: 5px;
+}
