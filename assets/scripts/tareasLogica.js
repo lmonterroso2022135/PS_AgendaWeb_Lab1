@@ -1,4 +1,5 @@
 const contenedorTareas = document.getElementById('contenedorTareas');
+const contenedorEditar = document.getElementById('editarForm');
 const miSwitch = document.getElementById('switch');
 
 
@@ -9,24 +10,43 @@ const agregarTarea = event =>{
         alert('agregar una descripcion');
         return;
     } 
+    
     const botonEditar = document.createElement('button');
     botonEditar.textContent = 'Editar';
-    botonEditar.addEventListener('click', editarTarea);
+    botonEditar.addEventListener('click', function () {
+        editarTarea(this);
+    });
 
 
     const tarea = document.createElement('div');
     tarea.classList.add('tarea');
     tarea.addEventListener('click', cambiarEstado)
     tarea.textContent = value;
+
+
     tarea.appendChild(botonEditar);
     contenedorTareas.prepend(tarea);
 
     if (miSwitch.checked) {
-        tarea.classList.add('prioridad');
-        tarea.classList.add('pri');
+        tarea.classList.toggle('prioridad');
+        tarea.classList.toggle('pri');
     }
     event.target.reset();
 };
+
+function editarTarea(tareaEdit){
+    const btnBorrar = document.getElementById('btnBorrar');
+    const tarea = tareaEdit.parentNode; // Obtener el div tarea
+    contenedorEditar.style.display = 'block';
+
+    btnBorrar.addEventListener('click', borrarTarea)
+    function borrarTarea(){
+        tarea.remove();
+    }
+}
+
+
+
 const cambiarEstado = event =>{
     event.target.classList.toggle('hecho');
     if(event.target.classList.contains('pri')){
@@ -55,12 +75,3 @@ const ordenarTareas = () =>{
     order().forEach(el => contenedorTareas.appendChild(el));
     alert('ggggggggggggg')
 }
-
-
-
-
-
-function editarTarea(event) {
-    const tareaE = event.target.parentNode;
-
-};
