@@ -3,15 +3,18 @@ const contenedorEditar = document.getElementById('editarForm');
 const contenedorAgregar = document.getElementById('agregarForm');
 const miSwitch = document.getElementById('switch');
 const miSwitchE = document.getElementById('switchEditar');
+const btnSA = document.getElementById('btnSalirA');
+const btnSE = document.getElementById('bntSalirE');
+
 
 const generarBotonEdicion = (tarea) => {
     const botonEditar = document.createElement('button');
-    botonEditar.textContent = 'Editar';
     botonEditar.addEventListener('click', () => editarTarea(tarea));
 
     return botonEditar;
 };
 const agregarTarea = event =>{
+    
     event.preventDefault();
     const {value} = event.target.descripcion;
     if(!value){
@@ -85,9 +88,11 @@ const editarTarea = () =>{
 
 const cambiarEstado = event =>{
     event.target.classList.toggle('hecho');
+
     if(event.target.classList.contains('pri')){
         event.target.classList.toggle('prioridad');
     }
+
 };
 
 const order =() =>{
@@ -125,3 +130,11 @@ function habilitarBotones(){
         boton.disabled = false;
     });
 }
+function salirDeEditar(){
+    contenedorEditar.style.display = 'none';
+    habilitarBotones();
+};
+function salirDeAgregar(){
+    habilitarAgregar.style.display = 'none';
+    habilitarBotones();
+};

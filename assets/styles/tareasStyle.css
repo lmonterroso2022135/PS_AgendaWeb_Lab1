@@ -1,8 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+    text-transform: capitalize;
+
+    color: white;
+}
+
+body{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 37%, rgba(9,17,124,1) 39%, rgba(0,255,225,1) 100%);
+    background: cover;
+    height: 100vh;
+    
+}
+.tareasContenedor{
+    margin: 30px auto;
+    width: 80%;
+    background-color: black;
+    padding: 30px;
+
+    border-radius: 25px;
+    border: 1px solid white;
+
+}
+.form{
+    
+    padding: 35px;
+    width: 35%;
+    border-radius: 25px;
+    border: 1px solid white;
+    align-items: center;
+
+    position: relative;
+    display: none;
+}
+.form .btn{
+    width: 100%;
+}
+input{
+    background-color: black;
+    border-radius: 15px;
+    border: 1px solid white;
+    height: 100px;
+    width:100% ;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    padding: 5px;
+    
+    color: white;
+}
+.btnSalir{
+    width: 25px;
+    height: 25px;
+    background-color: black;
+
+    background-image: url('../../resource/images/salirIcono.png');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    z-index: 1;
+    
+}
+/* .............................................. */
+@media screen and (max-width: 412px){
+    .tareasContenedor{
+        height: 90%;
+        width: 95%;
+    }
+    .form{
+        width: 90%;
+    }
+}
+/* ..................................................... */
+.btn{
+    margin: 5px;
+    height: 30px;
+    width: 200px;
+    padding: auto;
+    background-color: black;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+.btn:hover{
+    background-color: #32A7F1;
+    color: black;
+    font-weight: bold;
+}
+/* .......................................................... */
+.tarea {
+    border-radius: 10px;
+    border: 1px solid white;
+
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+}
+.tarea:hover{
+    background-color: rgb(39, 37, 37); 
+}
+.tarea button{
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    
+    background-image: url('../../resource/images/editarIcono.png');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    
+
+    border: 1px solid white;
+    border-radius: 5px;
+    right: 7px;
+    top: 7px;
+    position: absolute;
+}
+.tarea button:hover{
+    background-color: white;
+    border: 2px solid black;
+    background-image: url('../../resource/images/editarIcono2.png');
+}
 .hecho{
-    background-color: crimson;
+    text-decoration: line-through;
+    background-color: rgb(20, 19, 19);
+
+    border: none;
+    color: #474444;
 }
 .prioridad{
-    background-color: yellow;
+    background-color:rgb(255, 231, 18);
+    font-weight: bold;
+    color: black;
+}
+.prioridad:hover{
+    background-color:rgb(255, 255, 255);
 }
 
 /* ............. SWITCH ..................... */
@@ -34,7 +176,7 @@
     left: 36px;
 }
 #switch:checked + .lbl{
-    background-color: crimson;
+    background-color:rgb(255, 231, 18);
 }
 #switch{
     display: none;
@@ -43,15 +185,8 @@
     left: 36px;
 }
 #switchEditar:checked + .lbl{
-    background-color: crimson;
+    background-color: rgb(255, 231, 18);
 }
 #switchEditar{
-    display: none;
-}
-/* .............................. */
-.editarForm{
-    display: none;
-}
-#agregarForm{
     display: none;
 }

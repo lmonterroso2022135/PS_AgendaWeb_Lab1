@@ -8,25 +8,34 @@
     <title>Agenda</title>
 </head>
 <body>
-    <div class="lista aroundBorder">
+    <div class="tareasContenedor">
         <div class="botones">
-            <button type="submit" onclick="abrirFormulario()">Abrir</button>
-            <button type="button" class="btnOrdenar" onclick="ordenarTareas()">Ordenar</button>
-        
+            <h1>Tareas.</h1>
+            
+            <button type="submit" class="btn Abrir" onclick="abrirFormulario()">Agregar Tarea</button>
+            <button type="button" class="btn Ordenar" onclick="ordenarTareas()">Ordenar</button>
         </div>
-        <form onsubmit="agregarTarea(event)" id="agregarForm">
+        <form onsubmit="agregarTarea(event)" id="agregarForm" class="form Agregar">
+            <button type="button" class="btnSalir" onclick='salirDeAgregar()'></button>   
+            </button>
+            <h2>Agrega una Tarea</h2>
             <input type="text"  name="descripcion" autocomplete="off" placeholder="Descripcion.">
-            <button type="submit" >Guardar</button>
+            <button type="submit" class="btn Guardar" >Guardar</button>
+            <h3>Priorizar: </h3>
             <div class="switch--contenedor">
                 <input type="checkbox" id="switch">
                 <label for="switch" class="lbl"></label>
             </div>  
         </form>
-        <form onsubmit="editarTarea(event)" class="editarForm" id="editarForm">
+        <form onsubmit="editarTarea(event)" class="form Editar" id="editarForm">
+            <button type="button" class="btnSalir" onclick='salirDeEditar()'></button> 
+            <h2>Edita una tarea</h2>
             <input type="text"  id="InDescripcion" autocomplete="off" placeholder="Descripcion.">
-            <button type="button" class="btnActualizar" id="btnActualizar">Actualizar</button>
-            <button type="button" class="btnBorrar" id="btnBorrar">Borrar</button>
+            <button type="button" class="btn Actualizar" id="btnActualizar">Actualizar</button>
+            <button type="button" class="btn Borrar" id="btnBorrar">Borrar</button>
+
             <div class="switch--contenedor">
+                <h3>Priorizar: </h3>
                 <input type="checkbox" id="switchEditar">
                 <label for="switchEditar" class="lbl"></label>
             </div>  
