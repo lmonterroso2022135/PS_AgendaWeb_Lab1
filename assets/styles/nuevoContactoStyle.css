@@ -13,6 +13,9 @@ body{
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 37%, rgba(9,17,124,1) 39%, rgba(0,255,225,1) 100%);
     background: cover;
 
+    box-sizing: border-box;
+    min-height: 100vh;
+    text-align: center;
     
 }
 .encabezado{
@@ -57,3 +60,75 @@ body{
 .btnPerfil:hover{
     background-color: olivedrab;
 }
+/*.................................................... */
+.form{
+    background-color: black;
+    width: 90%;
+    max-width: 600px;
+
+    display:inline-block;
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid white;
+}
+.form_title{
+    font-size: 2rem;
+    margin-bottom: .5em;
+}
+.form_paragraph{
+    font-weight: 300;
+}
+.form_contenedor{
+    margin-top: 3em;
+    display: grid;
+    gap: 2.5em;
+}
+.form_grupo{
+    position: relative;
+}
+.form_input{
+    width: 100%;
+    background: none;
+    color: white;
+    font-size: 1rem;
+    padding: .6em .3em;
+    border: none;
+    outline: none;
+
+    border-bottom: 1px solid white
+}
+.form_input:focus + .form_label,
+.form_input:not(:placeholder-shown)+ .form_label{
+    transform: translateY(-12px) scale(.7);
+    transform-origin: left top;
+
+    color: white;
+
+}
+.form_label{
+    color: #706c6c;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    transform: translateY(10px);
+    transition: transform .5s, color .3s;
+}
+.form_submit{
+    background-color: black;
+    border-radius: 15px;
+    border: 1px solid white;
+
+    font-weight: bold;
+    padding: 10px;
+}
+.form_submit:hover{
+    background-color: #32A7F1;
+    color: black;
+}
+@media (max-width:500px){
+    .form{
+        margin-top: 70px;}
+}
+
