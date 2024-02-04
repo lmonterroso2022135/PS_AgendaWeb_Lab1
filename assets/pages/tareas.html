@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../../assets/styles/tareasStyle.css">
+
+    <title>Agenda</title>
 </head>
 <body>
-    
+    <div class="lista aroundBorder">
+        <div class="botones">
+            <button type="submit" class="btnAbrirFormulario">Abrir</button>
+            <button type="button" class="btnOrdenar" onclick="ordenarTareas()">Ordenar</button>
+        </div>
+        <form onsubmit="agregarTarea(event)">
+            <input type="text" name="descripcion" autocomplete="off" placeholder="Descripcion.">
+            <button type="submit" class="btnAgregar">Agregar</button>
+        </form>
+        <div class="contenedorTareas" id="contenedorTareas"></div>
+    </div>
+    <script src="../../assets/scripts/tareasLogica.js"></script>
 </body>
 </html>
