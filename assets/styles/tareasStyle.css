@@ -1,4 +1,41 @@
 .hecho{
     background-color: crimson;
 }
+.prioridad{
+    background-color: yellow;
+}
 
+/* ............. SWITCH ..................... */
+.lbl{
+    display: inline-block;
+    width: 65px;
+    height: 36px;
+    background-color: #979797;
+
+    border-radius: 100px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+}
+.lbl::after{
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-color: aliceblue;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: 0.2s;
+
+}
+#switch:checked + .lbl::after{
+    left: 36px;
+}
+#switch:checked + .lbl{
+    background-color: crimson;
+}
+#switch{
+    display: none;
+}

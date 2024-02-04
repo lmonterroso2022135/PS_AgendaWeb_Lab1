@@ -1,5 +1,5 @@
 const contenedorTareas = document.getElementById('contenedorTareas');
-
+const miSwitch = document.getElementById('switch');
 
 
 const agregarTarea = event =>{
@@ -20,26 +20,42 @@ const agregarTarea = event =>{
     tarea.textContent = value;
     tarea.appendChild(botonEditar);
     contenedorTareas.prepend(tarea);
+
+    if (miSwitch.checked) {
+        tarea.classList.add('prioridad');
+        tarea.classList.add('pri');
+    }
     event.target.reset();
 };
 const cambiarEstado = event =>{
-    
     event.target.classList.toggle('hecho');
+    if(event.target.classList.contains('pri')){
+        event.target.classList.toggle('prioridad');
+    }
 };
+
 const order =() =>{
     
     const hecho = [];
     const pendiente = [];
+    const prioridad = [];
     contenedorTareas.childNodes.forEach( el => {
-        el.classList.contains('hecho') ? hecho.push(el) : pendiente.push(el);
+        if (el.classList.contains('hecho')){
+            hecho.push(el);
+        }else if(el.classList.contains('prioridad')){
+            prioridad.push(el);
+        } else{
+            pendiente.push(el);
+        }
     })
-    return [...pendiente, ...hecho];
+    return [... prioridad,...pendiente, ...hecho];
 
 };
 const ordenarTareas = () =>{
     order().forEach(el => contenedorTareas.appendChild(el));
     alert('ggggggggggggg')
 }
+
 
 
 
