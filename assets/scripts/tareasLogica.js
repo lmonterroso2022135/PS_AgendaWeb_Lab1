@@ -1,8 +1,16 @@
 const contenedorTareas = document.getElementById('contenedorTareas');
 const contenedorEditar = document.getElementById('editarForm');
+const contenedorAgregar = document.getElementById('agregarForm');
 const miSwitch = document.getElementById('switch');
+const miSwitchE = document.getElementById('switchEditar');
 
+const generarBotonEdicion = (tarea) => {
+    const botonEditar = document.createElement('button');
+    botonEditar.textContent = 'Editar';
+    botonEditar.addEventListener('click', () => editarTarea(tarea));
 
+    return botonEditar;
+};
 const agregarTarea = event =>{
     event.preventDefault();
     const {value} = event.target.descripcion;
@@ -10,13 +18,6 @@ const agregarTarea = event =>{
         alert('agregar una descripcion');
         return;
     } 
-    
-    const botonEditar = document.createElement('button');
-    botonEditar.textContent = 'Editar';
-    botonEditar.addEventListener('click', function () {
-        editarTarea(this);
-    });
-
 
     const tarea = document.createElement('div');
     tarea.classList.add('tarea');
@@ -24,7 +25,8 @@ const agregarTarea = event =>{
     tarea.textContent = value;
 
 
-    tarea.appendChild(botonEditar);
+    const botonEditar = generarBotonEdicion(tarea);/* */
+    tarea.appendChild(botonEditar);/* */
     contenedorTareas.prepend(tarea);
 
     if (miSwitch.checked) {
@@ -32,20 +34,54 @@ const agregarTarea = event =>{
         tarea.classList.toggle('pri');
     }
     event.target.reset();
+    agregarForm.style.display = 'none';
 };
 
-function editarTarea(tareaEdit){
+const editarTarea = () =>{
+    agregarForm.style.display = 'none';
+    deshabilitarBotones()
     const btnBorrar = document.getElementById('btnBorrar');
-    const tarea = tareaEdit.parentNode; // Obtener el div tarea
+    const btnActualizar = document.getElementById('btnActualizar');
+    const InDescripcion = document.getElementById('InDescripcion');
+    const tarea = event.target.parentNode; 
     contenedorEditar.style.display = 'block';
+    InDescripcion.value = tarea.textContent;
 
-    btnBorrar.addEventListener('click', borrarTarea)
+    if(tarea.classList.contains('pri')){
+        miSwitchE.checked = true;
+    }
+    
+    btnBorrar.addEventListener('click', () => borrarTarea(tarea));
+    btnActualizar.addEventListener('click', () => actualizarTarea(tarea));
+
+    
     function borrarTarea(){
         tarea.remove();
+        contenedorEditar.style.display = 'none';
+        habilitarBotones()
     }
-}
+    function actualizarTarea(){
+        const textoInput = InDescripcion.value;
+        tarea.textContent = textoInput;
+        const botonEditar = generarBotonEdicion(tarea);
+        tarea.appendChild(botonEditar);    
+        
+        if (!(miSwitchE.checked)) {
+            tarea.classList.remove('prioridad');
+            tarea.classList.remove('pri');
+        }else{
+            tarea.classList.add('prioridad');
+            tarea.classList.add('pri');
+        }
+        tarea.classList.remove('hecho');
+        contenedorEditar.style.display = 'none';
+        
+        habilitarBotones();
+        
+    }
 
 
+};
 
 const cambiarEstado = event =>{
     event.target.classList.toggle('hecho');
@@ -71,7 +107,21 @@ const order =() =>{
     return [... prioridad,...pendiente, ...hecho];
 
 };
+function abrirFormulario(){
+    agregarForm.style.display = 'block';
+}
 const ordenarTareas = () =>{
     order().forEach(el => contenedorTareas.appendChild(el));
-    alert('ggggggggggggg')
+}
+function deshabilitarBotones(){
+    const botonesFueraDelDiv = document.querySelectorAll('button:not(#editarForm button)');
+    botonesFueraDelDiv.forEach(function (boton) {
+        boton.disabled = true;
+    });
+}
+function habilitarBotones(){
+    const botonesFueraDelDiv = document.querySelectorAll('button:not(#editarForm button)');
+    botonesFueraDelDiv.forEach(function (boton) {
+        boton.disabled = false;
+    });
 }

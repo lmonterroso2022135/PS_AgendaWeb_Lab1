@@ -39,7 +39,19 @@
 #switch{
     display: none;
 }
+#switchEditar:checked + .lbl::after{
+    left: 36px;
+}
+#switchEditar:checked + .lbl{
+    background-color: crimson;
+}
+#switchEditar{
+    display: none;
+}
 /* .............................. */
 .editarForm{
+    display: none;
+}
+#agregarForm{
     display: none;
 }

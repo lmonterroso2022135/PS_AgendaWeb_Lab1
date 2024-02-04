@@ -10,25 +10,25 @@
 <body>
     <div class="lista aroundBorder">
         <div class="botones">
-            <button type="submit" class="btnAbrirFormulario">Abrir</button>
+            <button type="submit" onclick="abrirFormulario()">Abrir</button>
             <button type="button" class="btnOrdenar" onclick="ordenarTareas()">Ordenar</button>
         
         </div>
-        <form onsubmit="agregarTarea(event)">
+        <form onsubmit="agregarTarea(event)" id="agregarForm">
             <input type="text"  name="descripcion" autocomplete="off" placeholder="Descripcion.">
-            <button type="submit" class="btnGuardar">Guardar</button>
+            <button type="submit" >Guardar</button>
             <div class="switch--contenedor">
                 <input type="checkbox" id="switch">
                 <label for="switch" class="lbl"></label>
             </div>  
         </form>
         <form onsubmit="editarTarea(event)" class="editarForm" id="editarForm">
-            <input type="text"  name="descripcion" autocomplete="off" placeholder="Descripcion.">
-            <button type="submit" class="btnGuardar">Guardar</button>
+            <input type="text"  id="InDescripcion" autocomplete="off" placeholder="Descripcion.">
+            <button type="button" class="btnActualizar" id="btnActualizar">Actualizar</button>
             <button type="button" class="btnBorrar" id="btnBorrar">Borrar</button>
             <div class="switch--contenedor">
-                <input type="checkbox" id="switch">
-                <label for="switch" class="lbl"></label>
+                <input type="checkbox" id="switchEditar">
+                <label for="switchEditar" class="lbl"></label>
             </div>  
         </form>
         <div class="contenedorTareas" id="contenedorTareas"></div>
