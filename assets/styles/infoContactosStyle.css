@@ -53,7 +53,7 @@ body{
   background-position: center;
 }
 .btnPerfil:hover{
-    background-color: olivedrab;
+    background-color: crimson;
 }
 /* ................................................................................. */
 .contenedor{
@@ -80,7 +80,7 @@ body{
     width: 200px;
     height: 200px;
 
-    background-color: crimson;
+    background-color: olivedrab;
     border-radius: 15px;
     display:  inline-block;
 } 
