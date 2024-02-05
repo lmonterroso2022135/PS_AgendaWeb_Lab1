@@ -13,6 +13,6 @@ usuarios
 TAREAS
 - Boton de CREAR tareas para abrir el menu.
 - Switch para crear una prioridad en la tarea.
-- Precionar sobre una tarea para marcarla como HECHA y volver a presionar para ponerla PENDIENTE.
+- Precionar sobre una tarea para marcarla como HECHA y volver a presionar para marcarla como PENDIENTE.
 - ORDENAR, presionar para ordenar las tareas en orden de prioridad, pendientes y hechas.
 - BOTON DERECHO, permite eliminar la tarea, actualizar su descripcion o cambiar su prioridad.
