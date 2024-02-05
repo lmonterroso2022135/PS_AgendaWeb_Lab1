@@ -100,12 +100,38 @@ body{
 .btnContacto:hover{
     background-color: olivedrab;
 }
-
-
-
-
 @media screen and (max-width: 650px){
     .htable{
         display: none;
     } 
+}
+/* ............................................................................ */
+.botones{
+    width: 100%;
+    height: 60px;
+    display: flex;    
+    justify-content: center;
+}
+.btn{
+    margin: auto;
+    width: 30%;
+    height: 100%;
+
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: black;
+
+    font-weight: bold;
+}
+.favoritos:hover{
+    background-color: #2ef87f;
+    color: black;
+}
+.nuevo:hover{
+    background-color: #3089FF;
+    color: black;
+}
+.tareas:hover{
+    background-color: crimson;
+    color: black;
 }
