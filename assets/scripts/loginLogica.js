@@ -2,9 +2,9 @@
 const button = document.getElementById('button-log-in');
 
 const usuarios = [
-    { correo: 'cjuarez', contraseña: '1234' },
-    { correo: 'mmorales', contraseña: '4321' },
-    { correo: 'lmonterroso', contraseña: '1234' }
+    { correo: 'cjuarez', contraseña: '1234' , nombre:'Carlos Juarez'},
+    { correo: 'dmorales', contraseña: '4321', nombre:'Diego Morales' },
+    { correo: 'lmonterroso', contraseña: '1234', nombre:'Luis Monterroso'}
 ];
 
 
@@ -25,7 +25,10 @@ function iniciarSesion(e) {
     
 
     if (comprobar(user, password)) {
-         window.location.href = "./assets/pages/contactos.html";
+        localStorage.setItem('userLog', user);
+
+        window.location.href = "./assets/pages/contactos.html";
+
     } else {
         alert("CREDENCIALES INCORRECTAS");
     }

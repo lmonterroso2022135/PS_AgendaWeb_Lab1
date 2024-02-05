@@ -14,10 +14,18 @@
                 <h1>CONTACTOS</h1>
             </div>
             <div class="nav_perfil">
-                <button class="btnPerfil"></button>
+                <button class="btnPerfil" id="btnPerfil"></button>
             </div>          
         </nav>
     </header>
+    <div class="contenedorPerfil" id="contenedorPerfil">
+        <img class="usuarioImagen2" src="../../resource/images/usuarioImagen.png" alt="">
+        <h2 id="usuarioH2"></h2>
+        <h4 id="nombreH4"> </h4>
+        <h4 id="emailH4"> </h4>
+        <button class="btnCerrarS" onclick="cerrarSesion()">Cerrar Sesión</button>
+
+    </div>
     <div class="contenedor" id="user1">
         <div class="contenedorImg">
             <img src="../../resource/images/user1.png" class="imgUsers" alt="">
@@ -26,6 +34,7 @@
         <p>jjimenez911@kinal.edu.gt</p>
         <p>1243-1267</p>
     </div>
+    <script src="../../assets/scripts/datosUsuario.js"> </script>
     <script src="../../assets/scripts/infoContactoLogica.js"></script>
 </body>
 </html>

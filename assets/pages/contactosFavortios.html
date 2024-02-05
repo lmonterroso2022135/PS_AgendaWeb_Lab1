@@ -14,13 +14,20 @@
                 <h1>CONTACTOS FAVORITOS</h1>
             </div>
             <div class="nav_perfil">
-                <button class="btnPerfil">
+                <button class="btnPerfil"id="btnPerfil" >
 
                 </button>
             </div>          
         </nav>
     </header>
+    <div class="contenedorPerfil" id="contenedorPerfil">
+        <img class="usuarioImagen2" src="../../resource/images/usuarioImagen.png" alt="">
+        <h2 id="usuarioH2"></h2>
+        <h4 id="nombreH4"> </h4>
+        <h4 id="emailH4"> </h4>
+        <button class="btnCerrarS" onclick="cerrarSesion()">Cerrar Sesión</button>
 
+    </div>
 
     <div class="contenedor">
         <table class="tablaPc">
@@ -58,6 +65,7 @@
             </tr>
         </table>
     </div>
+    <script src="../../assets/scripts/datosUsuario.js"> </script>
     <script src="../../assets/scripts/contactosFavLogica.js"></script>
 </body>
 </html>

@@ -56,7 +56,7 @@ body{
   background-position: center;
 }
 .btnPerfil:hover{
-    background-color: olivedrab;
+    background-color: crimson;
 }
 
 /* ..................................................................................... */
@@ -138,4 +138,42 @@ body{
     .htable{
         display: none;
     } 
+}
+/* ..................................................................................... */
+.contenedorPerfil{
+    
+    width: 300px;
+    height: 330px;
+    text-align: center;
+
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 15px;
+    position: fixed;
+    padding: 25px;
+
+    right: 10px;
+    top: 85px;
+    z-index: 1;
+
+    display: none;
+}
+.usuarioImagen2{
+    width: 150px;
+}
+.btnCerrarS{
+    width: 100%;
+    height: 40px;
+
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: crimson;
+
+    font-weight: bold;
+}
+.btnCerrarS:hover{
+    background-color: white;
+    color: black;
+
 }

@@ -14,12 +14,20 @@
                 <h1>NUEVO  CONTACTO</h1>
             </div>
             <div class="nav_perfil">
-                <button class="btnPerfil">
+                <button class="btnPerfil" id="btnPerfil">
 
                 </button>
             </div>          
         </nav>
     </header>
+    <div class="contenedorPerfil" id="contenedorPerfil">
+        <img class="usuarioImagen2" src="../../resource/images/usuarioImagen.png" alt="">
+        <h2 id="usuarioH2"></h2>
+        <h4 id="nombreH4"> </h4>
+        <h4 id="emailH4"> </h4>
+        <button class="btnCerrarS" onclick="cerrarSesion()">Cerrar Sesión</button>
+
+    </div>
     <form class="form">
         <h2 class="form_title">Crear nuevo contacto</h2>
         <p  class="form_paragraph">Todos los campos son necesarios.</p>
@@ -49,5 +57,6 @@
         </div>
     
     </form>
+    <script src="../../assets/scripts/datosUsuario.js"> </script>
 </body>
 </html>
